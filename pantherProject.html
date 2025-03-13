@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise Advice</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap');
+
+        body {
+            background-color: #CC93A1;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+            flex-direction: column;
+            padding: 20px;
+            direction: ltr;
+        }
+
+        .bottom-right-image {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            max-width: 40vw;
+            max-height: 100vh;
+            height: auto;
+        }
+
+        .result {
+            font-size: 30px;
+            margin-top: 20px;
+            font-family: 'Great Vibes', cursive;
+            color: white;
+        }
+
+        h1,
+        p {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .console-message {
+            font-size: 24px;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Never change to be accepted by others. Stay weird.</h1>
+    <p></p>
+
+    <div class="result" id="days-counter"></div>
+
+    <script>
+        
+        function calculateDaysSince(date) {
+            let currentDate = new Date();
+            let targetDate = new Date(date);
+            let timeDifference = currentDate - targetDate;
+            let daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+            return daysPassed;
+        }
+
+       //tuk moje da smenite datata s vashata data na rajdane, za da vaji za vas! :)
+        const daysPassed = calculateDaysSince('1991-04-24');
+
+       
+        document.getElementById('days-counter').innerText = `Day ${daysPassed} of my life.`;
+    </script>
+
+   
+    <img src="https://modena-art.eu/images/panter.png" alt="Pinko :P" class="bottom-right-image">
+
+</body>
+
+</html>
